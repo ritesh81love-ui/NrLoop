@@ -18,6 +18,8 @@
     --fern-soft: #DCE8DD;
     --brick: #8C3B2E;
     --brick-soft: #F0DCD5;
+    --info-blue: #1D5FC9;
+    --info-blue-light: #8FC4FF;
     --line: rgba(27,42,34,0.14);
     --shadow: 0 10px 30px rgba(27,42,34,0.10);
     --shadow-lg: 0 30px 80px rgba(20,30,25,0.20);
@@ -37,7 +39,7 @@
     background:linear-gradient(90deg, #2A7DD8, var(--fern));
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
-  .brand-tagline{ font-size:11px; font-weight:600; letter-spacing:.02em; opacity:.6; margin-top:1px; }
+  .brand-tagline{ font-size:11px; font-weight:700; letter-spacing:.02em; opacity:.85; margin-top:1px; }
   @media (max-width:480px){
     .topbar{ padding:16px 20px; }
     .brand-tagline{ display:none; }
@@ -50,7 +52,7 @@
   }
   .why-it-helps .glyph{ font-size:20px; flex-shrink:0; margin-top:1px; }
   .why-it-helps b{ display:block; font-size:13px; margin-bottom:4px; font-family:'Fraunces',serif; font-weight:600; font-size:15px; }
-  .why-it-helps p{ font-size:14px; line-height:1.6; opacity:.85; margin:0; }
+  .why-it-helps p{ font-size:14px; line-height:1.6; color:var(--info-blue-light); opacity:1; margin:0; }
 
   .founding-tier-box{
     display:flex; gap:14px; align-items:flex-start; background:var(--gold-soft); border:1px solid var(--gold);
@@ -93,7 +95,7 @@
   }
   .winwin-strip .glyph{ font-size:20px; flex-shrink:0; margin-top:1px; }
   .winwin-strip b{ display:block; font-size:15px; margin-bottom:4px; font-family:'Fraunces',serif; font-weight:600; }
-  .winwin-strip p{ font-size:14px; line-height:1.6; opacity:.85; margin:0; }
+  .winwin-strip p{ font-size:14px; line-height:1.6; color:var(--info-blue); opacity:1; margin:0; font-weight:500; }
 
 
   .wrap{ max-width:1080px; margin:0 auto; padding:12px 28px 60px; }
@@ -139,13 +141,13 @@
   .role-card.customer .role-icon{ background:var(--fern-soft); color:var(--fern); }
   .role-card.business .role-icon{ background:var(--gold-soft); color:#7A5A0E; }
   .role-card h3{ font-size:18px; margin:0 40px 8px 0; }
-  .role-card p{ font-size:14.5px; opacity:.72; line-height:1.55; margin:0 0 16px; min-height:58px; }
+  .role-card p{ font-size:14.5px; font-weight:500; opacity:.9; line-height:1.55; margin:0 0 16px; min-height:58px; }
   .role-card .perk-line{ font-size:12px; font-weight:600; display:flex; align-items:center; gap:6px; margin-bottom:6px; }
   .role-card .perk-line::before{ content:"✓"; color:var(--fern); font-weight:700; }
   .why-it-helps-perk{ font-size:12.5px; font-weight:600; display:flex; align-items:center; gap:7px; margin-top:8px; color:var(--paper); }
   .why-it-helps-perk::before{ content:"✓"; color:var(--gold-soft); font-weight:700; }
 
-  .role-hint{ text-align:center; font-size:13px; opacity:.6; margin:20px 0 16px; }
+  .role-hint{ text-align:center; font-size:14.5px; font-weight:700; color:var(--info-blue); opacity:1; margin:0 0 16px; }
 
   /* ---------- ABOUT / INFO (first page) ---------- */
   .invite-strip{
@@ -154,21 +156,21 @@
   }
   .invite-icon{ font-size:22px; flex-shrink:0; margin-top:1px; }
   .invite-strip b{ display:block; font-size:14.5px; margin-bottom:5px; font-family:'Fraunces',serif; font-weight:600; }
-  .invite-strip p{ font-size:14.5px; line-height:1.6; opacity:.78; margin:0; }
+  .invite-strip p{ font-size:14.5px; line-height:1.6; color:var(--info-blue); opacity:1; margin:0; font-weight:500; }
 
   .coming-soon-strip{
     background:var(--paper-dim); border-radius:16px; padding:20px 22px; margin-bottom:8px;
   }
-  .coming-soon-label{ font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:700; opacity:.55; font-family:'IBM Plex Mono',monospace; margin-bottom:12px; }
+  .coming-soon-label{ font-size:12px; text-transform:uppercase; letter-spacing:.06em; font-weight:800; opacity:.8; font-family:'IBM Plex Mono',monospace; margin-bottom:12px; }
   .coming-soon-chips{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
   .cs-chip{
     background:#fff; border:1px solid var(--line); border-radius:100px; padding:7px 14px;
     font-size:12.5px; font-weight:600; opacity:.85;
   }
-  .coming-soon-note{ font-size:14px; line-height:1.6; opacity:.7; margin:0; }
+  .coming-soon-note{ font-size:14.5px; line-height:1.6; color:var(--info-blue); opacity:1; margin:0 0 14px; font-weight:700; }
 
   .about-cta-row{ text-align:center; margin:32px auto 0; max-width:340px; }
-  .about-cta-hint{ font-size:13.5px; opacity:.62; margin:12px 0 0; }
+  .about-cta-hint{ font-size:13.5px; font-weight:600; opacity:.85; margin:12px 0 0; }
   .role-continue-row{ max-width:340px; margin:0 auto; }
   .role-continue-row .btn:disabled{ opacity:.35; cursor:not-allowed; }
 
@@ -177,7 +179,7 @@
   @media (max-width:900px){ .form-shell{grid-template-columns:1fr; gap:28px;} .side-panel{ position:static; } }
 
   .side-panel{ position:sticky; top:20px; }
-  .back-link{ display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; opacity:.6; margin-bottom:20px; background:none; border:none; padding:0; }
+  .back-link{ display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; opacity:.8; margin-bottom:20px; background:none; border:none; padding:0; }
   .back-link:hover{ opacity:1; }
   .role-badge{
     display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:11.5px;
@@ -187,30 +189,30 @@
   .role-badge.business{ background:var(--gold-soft); color:#7A5A0E; }
   .role-badge.both{ background:var(--brick-soft); color:var(--brick); }
   .side-panel h2{ font-size:26px; margin:0 0 12px; }
-  .side-panel p.lede{ font-size:14px; opacity:.7; line-height:1.6; margin:0 0 26px; }
+  .side-panel p.lede{ font-size:14px; font-weight:500; opacity:.9; line-height:1.6; margin:0 0 26px; }
 
   .mini-benefit{ display:flex; gap:12px; align-items:flex-start; margin-bottom:16px; }
   .mini-benefit .dot{ width:26px; height:26px; border-radius:8px; background:var(--paper-dim); display:flex; align-items:center; justify-content:center; font-size:12px; flex-shrink:0; margin-top:1px; }
   .mini-benefit b{ font-size:15px; display:block; margin-bottom:2px; }
-  .mini-benefit span{ font-size:14px; opacity:.7; line-height:1.55; }
+  .mini-benefit span{ font-size:14px; font-weight:500; opacity:.9; line-height:1.55; }
 
   .form-card{ background:#fff; border:1px solid var(--line); border-radius:22px; box-shadow:var(--shadow-lg); overflow:hidden; }
   .progress-track{ height:4px; background:var(--paper-dim); }
   .progress-fill{ height:100%; background:linear-gradient(90deg, var(--fern), var(--gold)); transition:width .35s ease; }
   .step-header{ padding:26px 30px 0; display:flex; justify-content:space-between; align-items:center; }
-  .step-count{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; opacity:.5; letter-spacing:.03em; }
+  .step-count{ font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:700; opacity:.75; letter-spacing:.03em; }
   .step-dots{ display:flex; gap:6px; }
   .step-dots span{ width:6px; height:6px; border-radius:50%; background:var(--paper-dim); }
   .step-dots span.done{ background:var(--fern); }
   .step-dots span.current{ background:var(--gold); }
   .step-body{ padding:18px 30px 30px; }
-  .step-body h3{ font-size:20px; margin:0 0 6px; }
-  .step-body p.hint{ font-size:14.5px; opacity:.7; margin:0 0 22px; line-height:1.55; }
+  .step-body h3{ font-size:20px; font-weight:700; margin:0 0 6px; }
+  .step-body p.hint{ font-size:14.5px; font-weight:500; opacity:.9; margin:0 0 22px; line-height:1.55; }
 
   .field{ margin-bottom:15px; }
-  .field label{ display:block; font-size:13.5px; font-weight:600; margin-bottom:7px; }
-  .field .field-sub{ display:block; font-size:11.5px; opacity:.5; margin:-4px 0 10px; }
-  .field-sub-inline{ font-weight:400; opacity:.5; font-size:11.5px; }
+  .field label{ display:block; font-size:14.5px; font-weight:700; color:var(--ink); margin-bottom:7px; }
+  .field .field-sub{ display:block; font-size:12.5px; font-weight:600; opacity:.85; margin:-4px 0 10px; }
+  .field-sub-inline{ font-weight:600; opacity:.85; font-size:12.5px; }
   .field input, .field select, .field textarea{
     width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px; font-size:15px;
     font-family:inherit; background:var(--paper); resize:none;
@@ -219,7 +221,7 @@
   .row2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
   @media (max-width:480px){ .row2{grid-template-columns:1fr;} }
 
-  .subsection-label{ font-size:11px; text-transform:uppercase; letter-spacing:.05em; opacity:.5; font-weight:700; margin:22px 0 12px; font-family:'IBM Plex Mono',monospace; }
+  .subsection-label{ font-size:12px; text-transform:uppercase; letter-spacing:.05em; opacity:.8; font-weight:800; margin:22px 0 12px; font-family:'IBM Plex Mono',monospace; }
   .subsection-label:first-child{ margin-top:0; }
 
   .chip-select{ border:1.5px solid var(--line); background:var(--paper); padding:8px 15px; border-radius:100px; font-size:14px; font-weight:600; transition:all .15s ease; }
@@ -236,6 +238,7 @@
   .service-card{ flex:1 1 calc(50% - 9px); min-width:135px; border:1.5px solid var(--line); border-radius:13px; padding:13px; text-align:left; background:var(--paper); transition:all .15s ease; position:relative; }
   .service-card .icon{ font-size:17px; margin-bottom:6px; display:block; }
   .service-card b{ font-size:14px; display:block; }
+  .service-card .sub{ font-size:12px; display:block; margin-top:3px; opacity:.8; line-height:1.4; font-weight:600; }
   .service-card.selected{ border-color:var(--fern); background:var(--fern-soft); }
   .service-card .check{ position:absolute; top:10px; right:10px; width:16px; height:16px; border-radius:50%; border:1.5px solid var(--line); background:#fff; display:flex; align-items:center; justify-content:center; font-size:9px; color:transparent; }
   .service-card.selected .check{ background:var(--fern); border-color:var(--fern); color:#fff; }
@@ -243,7 +246,7 @@
   .star-row{ display:flex; gap:7px; margin-bottom:6px; }
   .star{ width:40px; height:40px; border-radius:11px; border:1.5px solid var(--line); background:var(--paper); font-size:17px; display:flex; align-items:center; justify-content:center; transition:all .15s ease; }
   .star.active{ background:var(--gold-soft); border-color:var(--gold); }
-  .star-caption{ font-size:13.5px; opacity:.62; margin-bottom:20px; min-height:15px; }
+  .star-caption{ font-size:14px; font-weight:600; opacity:.9; margin-bottom:20px; min-height:15px; }
 
   .step-actions{ display:flex; gap:12px; margin-top:6px; }
   .btn{ border:none; padding:12px 22px; border-radius:11px; font-weight:700; font-size:14px; background:var(--ink); color:var(--paper); transition:opacity .15s ease, transform .1s ease; }
@@ -259,21 +262,21 @@
   .confirm-top{ padding:40px 34px 10px; text-align:center; }
   .confirm-ring{ margin:0 auto 18px; }
   .confirm-top h2{ font-size:25px; margin:0 0 8px; }
-  .confirm-top p{ font-size:15px; opacity:.78; max-width:40ch; margin:0 auto 16px; line-height:1.6; }
+  .confirm-top p{ font-size:15px; font-weight:500; opacity:.92; max-width:40ch; margin:0 auto 16px; line-height:1.6; }
   .interest-badge{ display:inline-flex; align-items:center; gap:8px; background:var(--paper-dim); border-radius:100px; padding:8px 16px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; margin-bottom:6px; }
 
   .benefits-section{ padding:14px 34px 34px; }
-  .benefits-title{ font-size:11px; text-transform:uppercase; letter-spacing:.06em; opacity:.5; font-weight:700; text-align:center; margin:18px 0 16px; font-family:'IBM Plex Mono',monospace; }
+  .benefits-title{ font-size:12px; text-transform:uppercase; letter-spacing:.06em; opacity:.8; font-weight:800; text-align:center; margin:18px 0 16px; font-family:'IBM Plex Mono',monospace; }
   .benefit-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   @media (max-width:560px){ .benefit-grid{grid-template-columns:1fr;} }
   .benefit-card{ background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:16px; }
   .benefit-card .tier-icon{ width:30px;height:30px;border-radius:9px; display:flex;align-items:center;justify-content:center; font-size:14px; margin-bottom:10px; }
   .benefit-card b{ font-size:15px; display:block; margin-bottom:4px; }
-  .benefit-card span{ font-size:13.5px; opacity:.72; line-height:1.5; }
+  .benefit-card span{ font-size:13.5px; font-weight:500; opacity:.9; line-height:1.5; }
 
   .restart-row{ text-align:center; padding:0 34px 34px; }
 
-  footer{ text-align:center; padding:30px; font-size:13px; opacity:.5; font-family:'IBM Plex Mono',monospace; }
+  footer{ text-align:center; padding:30px; font-size:13px; font-weight:600; opacity:.75; font-family:'IBM Plex Mono',monospace; }
 
   @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
 </style>
@@ -298,25 +301,19 @@
     </div>
 
     <div class="invite-strip">
-      <div class="invite-icon">🙌</div>
+      <div class="invite-icon">💰</div>
       <div>
-        <b>The real magic is doing this with people you know.</b>
-        <p>A group deal works best when a couple of neighbours or friends join in together — everyone's price drops at once. Once launched, a simple invite link will make that easy to share straight from a phone. For now, it's worth thinking about who'd be worth bringing along.</p>
+        <b>Running a household adds up faster than most people track.</b>
+        <p>Between pest control, house cleaning, gardening, carpet cleaning, electrical and gas repairs, and aircon and heating servicing, Australian cost guides commonly put an actively-maintained home somewhere around $3,000–$5,000 a year — often more, depending on property size and location. Grouping bookings together is one practical way for neighbours to push back against rising costs. This is just Stage 1 — Stage 2 is planned to bring in more categories that stretch the household budget even further, so there's good reason to get in early while this is still taking shape.</p>
       </div>
     </div>
 
-    <div class="coming-soon-strip">
-      <div class="coming-soon-label">More categories are on the way</div>
-      <div class="coming-soon-chips">
-        <span class="cs-chip">❄️ Aircon & Heating (Install & Repair)</span>
-        <span class="cs-chip">🪵 Cabinet Maker</span>
-        <span class="cs-chip">☀️ Solar & Battery</span>
-        <span class="cs-chip">🧼 Home & Business Cleaning</span>
-        <span class="cs-chip">📚 Group Tutoring</span>
-        <span class="cs-chip">🎉 Party & Event Decor</span>
-        <span class="cs-chip">📣 Business Launch & Promo Events</span>
+    <div class="invite-strip">
+      <div class="invite-icon">🙌</div>
+      <div>
+        <b>The real magic is doing this with people you know — and businesses you trust.</b>
+        <p>Group deals work best with neighbours or friends joining in together — prices drop for everyone at once. In a hurry? Book the same trusted provider individually instead, no group needed.</p>
       </div>
-      <p class="coming-soon-note">One provider, several nearby bookings, one trip — that's the model. Group deals can be booked together, with the actual work scheduled within the next 2–3 months, or whatever window the business sets.</p>
     </div>
 
     <div class="about-cta-row">
@@ -344,11 +341,12 @@
     <div class="founding-tier-box">
       <div class="glyph">🏆</div>
       <div>
-        <b>First 100 members get priority access</b>
-        <p>The first 100 people to join — customers and businesses alike — get priority placement as services go live and more businesses come on board. From there, ongoing tiers are earned: completing tasks and collecting 5-star reviews moves both customers and businesses up through service tiers, unlocking better visibility and perks over time.</p>
+        <b>First 500 feedback responses become founding members</b>
+        <p>The first 500 people to share feedback here — customers and businesses alike — become founding members with priority placement as services go live and more businesses come on board. From there, ongoing tiers are earned: completing bookings and collecting 5-star reviews moves both customers and businesses up through service tiers, unlocking better visibility over time.</p>
       </div>
     </div>
 
+    <p class="role-hint" id="role-hint">Tick one, or both if you're a business owner who'd also use this as a customer.</p>
     <div class="role-grid">
       <button class="role-card customer" data-toggle-role="customer">
         <span class="role-check">✓</span>
@@ -363,7 +361,6 @@
       </button>
     </div>
 
-    <p class="role-hint" id="role-hint">Tick one, or both if you're a business owner who'd also use this as a customer.</p>
     <div class="role-continue-row">
       <button type="button" class="btn full" id="role-continue-btn" disabled>Continue</button>
     </div>
@@ -376,6 +373,7 @@
         <button class="back-link" id="back-to-landing">&larr; Choose a different path</button>
         <div id="role-badge-slot"></div>
         <h2 id="side-heading"></h2>
+        <div id="mini-benefits"></div>
         <div class="why-it-helps">
           <div class="glyph">💡</div>
           <div><b>Why this helps you</b><p id="why-it-helps-text"></p></div>
@@ -384,7 +382,6 @@
           <div class="glyph">🔁</div>
           <div><b id="cross-sell-title"></b><p id="cross-sell-text"></p></div>
         </div>
-        <div id="mini-benefits"></div>
       </div>
 
       <div class="form-card">
@@ -485,18 +482,23 @@ function submitToGoogleSheet(payload){
   }
 }
 
-const SUBURBS = ["Brabham", "Ellenbrook", "Swan Valley", "Dayton", "Aveley", "The Vines", "Other"];
+const SUBURBS = ["North-Eastern Metro (The Valley & Hills)", "Inner Metropolitan (City Core & Historic Suburbs)", "North-Western Metro (Northern Coastal Strip)", "South-Eastern Metro (Outer South-East Corridor)", "South-Western Metro (Southern Coastal Strip)"];
 const SERVICES = [
-  { key:"pest", icon:"🐜", label:"Pest Control" },
-  { key:"clean", icon:"🧽", label:"Cleaning" },
-  { key:"detail", icon:"🚗", label:"Car Detailing" },
-  { key:"home", icon:"🏡", label:"Home Services" },
-  { key:"garden", icon:"🌿", label:"Gardening & Lawns" },
-  { key:"handyman", icon:"🔧", label:"Handyman" },
-  { key:"pool", icon:"🏊", label:"Pool Care" },
-  { key:"paint", icon:"🎨", label:"Painting" }
+  { key:"pest", icon:"🐜", label:"Pest Control", sub:"new-home treatments, annual protection, house-vacating" },
+  { key:"cooling", icon:"❄️", label:"Cooling & Heating", sub:"vent cleaning, annual servicing, installs & repairs" },
+  { key:"clean", icon:"🧼", label:"Home & Commercial Cleaning", sub:"festive-season cleans, move-in/out, house-warming prep" },
+  { key:"carpet", icon:"🧺", label:"Carpet Cleaning", sub:"single room, living & theatre areas, whole house" },
+  { key:"solarclean", icon:"☀️", label:"Solar Panel Cleaning", sub:"get panels ready before summer" },
+  { key:"party", icon:"🎉", label:"Party & Event Decor", sub:"birthdays, house-warmings, baby showers, celebrations" },
+  { key:"solarinstall", icon:"🔋", label:"Solar & Battery Installation", sub:"new systems, battery add-ons, EV-ready upgrades" },
+  { key:"electrical", icon:"⚡", label:"Electrical", sub:"EV charger setup, new wiring, fault callouts" },
+  { key:"water", icon:"💧", label:"Water Purification", sub:"whole-house filtration, under-sink units" },
+  { key:"gasplumb", icon:"🔧", label:"Gas & Plumbing", sub:"new installs, leak repairs, fault fixes" },
+  { key:"garden", icon:"🌿", label:"Gardening & Lawns", sub:"mowing, tidy-ups, seasonal pruning" },
+  { key:"pool", icon:"🏊", label:"Pool Care", sub:"routine cleaning, equipment faults, summer prep" },
+  { key:"handyman", icon:"🛠️", label:"Handyman", sub:"general fixes, small repairs, odd jobs" }
 ];
-const CATEGORIES = ["Pest Control", "Cleaning", "Car Detailing", "Home Services", "Gardening & Lawns", "Handyman", "Pool Care", "Painting", "Other"];
+const CATEGORIES = SERVICES.map(s=>s.label).concat(["Other"]);
 
 let interestCount = 241;
 const PRIORITY_ITEMS = [
@@ -508,7 +510,7 @@ const PRIORITY_ITEMS = [
 const NOTIFY_OPTIONS = ["Email","SMS / text message","WhatsApp","Facebook group post"];
 let state = { role:null, name:"", email:"", suburb:null, services:new Set(),
   bizName:"", bizCategory:"", bizVolume:"", rating:0, reasons:new Set(),
-  concerns:new Set(), concernOther:"", priorityRank:[], notifyPrefs:new Set() };
+  concerns:new Set(), concernOther:"", priorityRank:[], notifyPrefs:new Set(), notifyPhone:"" };
 
 /* ============ RING HELPER ============ */
 function ringSvg(pct, size, stroke, fg){
@@ -538,7 +540,7 @@ document.getElementById('about-continue-btn').addEventListener('click', ()=>{
 const ROLE_CONTENT = {
   customer:{
     badgeClass:"customer", badgeLabel:"Joining as a customer",
-    heading:"What would you love to save on?", lede:"A couple of quick details so we can match you to deals near you and remember what you care about.",
+    heading:"What would you use it for?", lede:"A couple of quick details so we can match you to deals near you and remember what you care about.",
     whyHelpsCard:"Join a group deal and the services you already pay for — pest control, cleaning, detailing — cost less the moment your neighbours join too. In a hurry? Book the same trusted provider individually instead — no waiting on a group.",
     cardPerks:["Being part of a group with a strong track record for reliability","Book individually anytime if you need it fast"],
     miniBenefits:[
@@ -563,10 +565,10 @@ const ROLE_CONTENT = {
     confirmSub:"Thanks for sharing this — it genuinely helps shape what this becomes for the community. We'll be in touch as things take shape near you.",
     benefitsTitle:"Why customers stick around",
     benefits:[
-      {icon:"⭐", cls:"customer", title:"5-Star Track Record", text:"The plan is for providers to be ranked by real review history — not who pays the most — so trust decides what you see first."},
-      {icon:"🛡️", cls:"customer", title:"No-Cancellation Standard", text:"Providers with a clean record of turning up and finishing the job are the ones this is designed to keep front and centre."},
-      {icon:"✅", cls:"customer", title:"Cleared Payment History", text:"A history of smooth, cleared payments on both sides is part of what's meant to keep trust high as this grows."},
-      {icon:"🤝", cls:"customer", title:"Referral Recognition", text:"Bringing a neighbour along is something we genuinely want to recognise — we're still working out the best way to do that, and this pilot's feedback will help shape it."},
+      {icon:"⭐", cls:"customer", title:"Reviews You Can See", text:"See a provider's customer ratings and review history to help you choose with confidence. A less than perfect rating does not automatically hide a good local business."},
+      {icon:"📅", cls:"customer", title:"Reliable Scheduling", text:"Clear appointment times matter. When an unavoidable change comes up, the customer and business can agree on a new time, with rescheduling kept to a minimum."},
+      {icon:"💳", cls:"customer", title:"On-Time Payments", text:"Clear payment terms help everyone know when payment is due and give businesses confidence that completed work will be paid for on time."},
+      {icon:"🤝", cls:"customer", title:"Referral Recognition", text:"Invite a neighbour or another local business. We're exploring ways to recognise helpful referrals, guided by feedback from this pilot."},
       {icon:"🗣️", cls:"customer", title:"Your Feedback Shapes What's Next", text:"Loyalty perks are still taking shape, and feedback from this pilot is exactly what will guide those decisions."}
     ]
   },
@@ -597,9 +599,9 @@ const ROLE_CONTENT = {
     confirmSub:"Thanks for the details — this helps shape how it supports businesses like yours. We'll be in touch as things take shape.",
     benefitsTitle:"Why businesses stay",
     benefits:[
-      {icon:"⭐", cls:"business", title:"Reputation-Weighted Visibility", text:"The plan is for businesses with strong review histories to get preference for future placements — not just whoever pays most."},
-      {icon:"🛡️", cls:"business", title:"Reliability Recognition", text:"A record of zero cancellations and on-time jobs is meant to count toward better visibility over time."},
-      {icon:"✅", cls:"business", title:"Verified Payment History", text:"Clean, on-time payment history on both sides is part of what's designed to build trust as this scales."},
+      {icon:"⭐", cls:"business", title:"Your Track Record Matters", text:"Your customer ratings and review history can help people discover your business. A single lower rating should not define the quality of your work."},
+      {icon:"📅", cls:"business", title:"Fair Scheduling for Both Sides", text:"Keep bookings on schedule wherever possible. If circumstances change, agree on a suitable new time with the customer and keep disruptions to a minimum."},
+      {icon:"💳", cls:"business", title:"Prompt, Clear Payments", text:"Agreed payment terms and timely payment help you plan your work and serve customers with confidence."},
       {icon:"🤝", cls:"business", title:"Cross-Business Referrals", text:"Team up with other local businesses on joint promotions — like a clean-and-pest bundle — to reach each other's customer base."},
       {icon:"🗣️", cls:"business", title:"Your Feedback Shapes the Model", text:"Fees, priority and rewards are still being worked out, and feedback from this pilot is exactly what will guide those decisions."}
     ]
@@ -628,10 +630,11 @@ const ROLE_CONTENT = {
     confirmSub:"Thanks for setting up both sides — this kind of feedback helps shape it for the whole community. We'll be in touch as things take shape.",
     benefitsTitle:"Why Loop Insiders stay",
     benefits:[
-      {icon:"⭐", cls:"both", title:"Reputation Carries Both Ways", text:"A strong review and reliability record on your business side is planned to count on your customer side too, and vice versa."},
-      {icon:"🛡️", cls:"both", title:"Reliability Recognition", text:"A no-cancellation, on-time track record matters here — on both sides of your account."},
+      {icon:"⭐", cls:"both", title:"A Reputation Built Over Time", text:"Your reviews and reliability can build trust on both sides of your account. The overall record matters more than a perfect score."},
+      {icon:"📅", cls:"both", title:"Scheduling That Respects Everyone", text:"Both sides should honour agreed times. Unavoidable changes can be resolved together, with as little rescheduling as possible."},
+      {icon:"💳", cls:"both", title:"Payment You Can Rely On", text:"Clear terms and on-time payment help keep each booking fair for the customer and the business."},
       {icon:"🧾", cls:"both", title:"One Combined Dashboard", text:"Track your listed deals and your joined deals in a single account."},
-      {icon:"🤝", cls:"both", title:"Referrals That Are Recognised", text:"Bringing people in — as neighbours or as fellow businesses — is something we genuinely want to recognise, and we're still working out the best way to do that with input from this pilot."},
+      {icon:"🤝", cls:"both", title:"Referral Recognition", text:"Invite a neighbour or another local business. We're exploring ways to recognise helpful referrals, guided by feedback from this pilot."},
       {icon:"🗣️", cls:"both", title:"Your Feedback Shapes the Model", text:"Perks and fees are still taking shape, and feedback from this pilot is exactly what will guide those decisions."}
     ]
   }
@@ -847,26 +850,40 @@ function buildForm(role){
   document.getElementById('step1-body').innerHTML =
     `<h3>${cfg.heading}</h3><p class="hint">${cfg.lede}</p>` + step1Html +
     `<div class="field">
-       <label>How would you like to be notified about group deals or promotions?</label>
-       <span class="field-sub">Pick any that apply</span>
+       <label>How should we notify you about deals?</label>
+       <span class="field-sub">Pick any — kept private, used only for pilot updates</span>
        <div class="reason-grid" id="notify-list"></div>
      </div>` +
     `<div class="error-msg" id="err-1">Fill in the required fields to continue.</div>
      <div class="step-actions"><button type="button" class="btn full grow" id="to-step2">Continue</button></div>`;
 
   state.notifyPrefs = new Set();
+  state.notifyPhone = "";
   document.getElementById('notify-list').innerHTML = NOTIFY_OPTIONS.map((n,i)=>`
     <button type="button" class="reason-option" data-notify-idx="${i}">
       <span class="r-text">${n}</span>
       <span class="r-check">✓</span>
-    </button>`
+    </button>` + (n === 'SMS / text message'
+      ? `<input type="tel" id="notify-phone-input" class="other-suburb-input" style="display:none;" placeholder="Your phone number">`
+      : '')
   ).join('');
   document.querySelectorAll('#notify-list [data-notify-idx]').forEach(opt=>{
     opt.addEventListener('click', ()=>{
       const label = NOTIFY_OPTIONS[opt.dataset.notifyIdx];
       if(state.notifyPrefs.has(label)){ state.notifyPrefs.delete(label); opt.classList.remove('selected'); }
       else{ state.notifyPrefs.add(label); opt.classList.add('selected'); }
+      const phoneInput = document.getElementById('notify-phone-input');
+      if(state.notifyPrefs.has('SMS / text message')){
+        phoneInput.style.display = 'block';
+      } else {
+        phoneInput.style.display = 'none';
+        phoneInput.value = '';
+        state.notifyPhone = '';
+      }
     });
+  });
+  document.getElementById('notify-phone-input').addEventListener('input', (e)=>{
+    state.notifyPhone = e.target.value;
   });
 
   wireStep1Interactions();
@@ -886,14 +903,14 @@ function customerStep1(compact){
       <div class="chip-row" id="suburb-chips">
         ${SUBURBS.map(s=>`<button type="button" class="chip-select" data-suburb="${s}">${s}</button>`).join('')}
       </div>
-      <input type="text" id="f-suburb-other" class="other-suburb-input" style="display:none;" placeholder="Type your suburb">
+      <input type="text" id="f-suburb-other" class="other-suburb-input" style="display:none;" placeholder="Which suburb? (e.g. Ellenbrook)">
     </div>
     <div class="field">
-      <label>What would you use it for?</label>
+      <span class="field-sub">Pick any that apply</span>
       <div class="service-cards" id="service-cards">
         ${SERVICES.map(s=>`
           <button type="button" class="service-card" data-service="${s.key}">
-            <span class="check">✓</span><span class="icon">${s.icon}</span><b>${s.label}</b>
+            <span class="check">✓</span><span class="icon">${s.icon}</span><b>${s.label}</b><span class="sub">${s.sub}</span>
           </button>`).join('')}
       </div>
     </div>
@@ -922,7 +939,7 @@ function businessStep1(compact){
       <div class="chip-row" id="biz-suburb-chips">
         ${SUBURBS.map(s=>`<button type="button" class="chip-select" data-bizsuburb="${s}">${s}</button>`).join('')}
       </div>
-      <input type="text" id="f-bizsuburb-other" class="other-suburb-input" style="display:none;" placeholder="Type your suburb">
+      <input type="text" id="f-bizsuburb-other" class="other-suburb-input" style="display:none;" placeholder="Which suburb? (e.g. Ellenbrook)">
     </div>
     <div class="field">
       <label>Category not listed? <span class="field-sub-inline">(optional)</span></label>
@@ -936,40 +953,40 @@ function wireStep1Interactions(){
     btn.addEventListener('click', ()=>{
       document.querySelectorAll('[data-suburb]').forEach(b=>b.classList.remove('selected'));
       btn.classList.add('selected');
+      state.suburbRegion = btn.dataset.suburb;
       const otherInput = document.getElementById('f-suburb-other');
-      if(btn.dataset.suburb === 'Other'){
-        otherInput.style.display = 'block';
-        otherInput.focus();
-        state.suburb = otherInput.value.trim();
-      } else {
-        otherInput.style.display = 'none';
-        state.suburb = btn.dataset.suburb;
-      }
+      otherInput.style.display = 'block';
+      otherInput.focus();
+      const name = otherInput.value.trim();
+      state.suburb = name ? `${state.suburbRegion} — ${name}` : state.suburbRegion;
     });
   });
   const suburbOtherInput = document.getElementById('f-suburb-other');
   if(suburbOtherInput){
-    suburbOtherInput.addEventListener('input', ()=>{ state.suburb = suburbOtherInput.value.trim(); });
+    suburbOtherInput.addEventListener('input', ()=>{
+      const name = suburbOtherInput.value.trim();
+      state.suburb = name ? `${state.suburbRegion} — ${name}` : state.suburbRegion;
+    });
   }
 
   document.querySelectorAll('[data-bizsuburb]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       document.querySelectorAll('[data-bizsuburb]').forEach(b=>b.classList.remove('selected'));
       btn.classList.add('selected');
+      state.bizSuburbRegion = btn.dataset.bizsuburb;
       const otherInput = document.getElementById('f-bizsuburb-other');
-      if(btn.dataset.bizsuburb === 'Other'){
-        otherInput.style.display = 'block';
-        otherInput.focus();
-        state.bizSuburb = otherInput.value.trim();
-      } else {
-        otherInput.style.display = 'none';
-        state.bizSuburb = btn.dataset.bizsuburb;
-      }
+      otherInput.style.display = 'block';
+      otherInput.focus();
+      const name = otherInput.value.trim();
+      state.bizSuburb = name ? `${state.bizSuburbRegion} — ${name}` : state.bizSuburbRegion;
     });
   });
   const bizSuburbOtherInput = document.getElementById('f-bizsuburb-other');
   if(bizSuburbOtherInput){
-    bizSuburbOtherInput.addEventListener('input', ()=>{ state.bizSuburb = bizSuburbOtherInput.value.trim(); });
+    bizSuburbOtherInput.addEventListener('input', ()=>{
+      const name = bizSuburbOtherInput.value.trim();
+      state.bizSuburb = name ? `${state.bizSuburbRegion} — ${name}` : state.bizSuburbRegion;
+    });
   }
   document.querySelectorAll('[data-service]').forEach(card=>{
     card.addEventListener('click', ()=>{
@@ -1114,6 +1131,7 @@ document.getElementById('role-form').addEventListener('submit', (e)=>{
     ).join(', '),
     priorityRank: state.priorityRank.map((idx,pos)=>`${pos+1}) ${PRIORITY_ITEMS[idx]}`).join('; '),
     notifyPrefs: Array.from(state.notifyPrefs).join(', '),
+    notifyPhone: state.notifyPhone || '',
     regNumber: regNumber
   });
 
@@ -1135,7 +1153,7 @@ document.getElementById('role-form').addEventListener('submit', (e)=>{
 document.getElementById('restart-btn').addEventListener('click', ()=>{
   state = { role:null, name:"", email:"", suburb:null, services:new Set(),
     bizName:"", bizCategory:"", bizVolume:"", rating:0, reasons:new Set(),
-    concerns:new Set(), concernOther:"", priorityRank:[], notifyPrefs:new Set() };
+    concerns:new Set(), concernOther:"", priorityRank:[], notifyPrefs:new Set(), notifyPhone:"" };
   selectedRoles = new Set();
   document.querySelectorAll('[data-toggle-role]').forEach(c=>c.classList.remove('selected'));
   updateRoleContinueState();
