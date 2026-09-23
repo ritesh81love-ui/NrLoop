@@ -294,7 +294,7 @@
     <div class="landing-hero">
       <div class="eyebrow">From local, for local</div>
       <h1>Hey neighbour —<br><em>this is early, and your take on it matters.</em></h1>
-      <p>This is a simple idea being tested: bringing people nearby together on the services they already need — pest control, cleaning, gardening, handyman work and more — so the price drops the moment enough neighbours join in, and the local businesses doing the work get a fuller, more efficient day instead of scattered one-off jobs. A genuine win for both sides — if it's built right. What matters most right now is one thing: would this actually get used, and what would make it better?</p>
+      <p>This is a simple idea being tested: nearby households joining up on the services they already need — pest control, cleaning, gardening, handyman work and more — so the price drops once enough neighbours join in, and local businesses get a fuller, more efficient day instead of scattered one-off jobs. If you need something done quickly and can't wait for a group to form, you can still book the same trusted providers individually — group deals are the savings path, not the only path. What matters most right now is one thing: would this actually get used, and what would make it better?</p>
     </div>
 
     <div class="invite-strip">
@@ -308,33 +308,15 @@
     <div class="coming-soon-strip">
       <div class="coming-soon-label">More categories are on the way</div>
       <div class="coming-soon-chips">
-        <span class="cs-chip">⚡ Electrician</span>
-        <span class="cs-chip">🔧 Plumbing</span>
-        <span class="cs-chip">🔑 Locksmith</span>
-        <span class="cs-chip">🏠 Roofing & Gutters</span>
-        <span class="cs-chip">❄️ Air Con & Heating</span>
-        <span class="cs-chip">🐾 Pet Care</span>
-        <span class="cs-chip">📚 Tutoring</span>
-        <span class="cs-chip">📦 Moving Help</span>
-        <span class="cs-chip">💻 Tech Support</span>
-        <span class="cs-chip">🧺 Appliance Repair</span>
-        <span class="cs-chip">🧼 Carpet & Upholstery</span>
-        <span class="cs-chip">👶 Babysitting & Childcare</span>
-        <span class="cs-chip">🧓 Elderly & Home Care</span>
-        <span class="cs-chip">🏋️ Personal Training</span>
-        <span class="cs-chip">💇 Beauty & Wellness</span>
-        <span class="cs-chip">📷 Photography & Events</span>
-        <span class="cs-chip">🧾 Tax & Accounting</span>
-        <span class="cs-chip">⚖️ Legal Services</span>
+        <span class="cs-chip">❄️ Aircon & Heating (Install & Repair)</span>
+        <span class="cs-chip">🪵 Cabinet Maker</span>
         <span class="cs-chip">☀️ Solar & Battery</span>
-        <span class="cs-chip">🔒 Security Systems</span>
-        <span class="cs-chip">🧱 Flooring & Tiling</span>
-        <span class="cs-chip">🚧 Fencing</span>
-        <span class="cs-chip">🗑️ Skip Bin & Waste Removal</span>
-        <span class="cs-chip">🌳 Tree & Arborist Services</span>
-        <span class="cs-chip">🔩 Mobile Mechanic</span>
+        <span class="cs-chip">🧼 Home & Business Cleaning</span>
+        <span class="cs-chip">📚 Group Tutoring</span>
+        <span class="cs-chip">🎉 Party & Event Decor</span>
+        <span class="cs-chip">📣 Business Launch & Promo Events</span>
       </div>
-      <p class="coming-soon-note">Every category added follows the same idea — group up, pay less. If it's a service a household might ever need or want to ask about, it's on the list to consider. Early members get first access and the best group rates as each new one comes online.</p>
+      <p class="coming-soon-note">One provider, several nearby bookings, one trip — that's the model. Group deals can be booked together, with the actual work scheduled within the next 2–3 months, or whatever window the business sets.</p>
     </div>
 
     <div class="about-cta-row">
@@ -354,8 +336,8 @@
     <div class="winwin-strip">
       <div class="glyph">🤝</div>
       <div>
-        <b>Built as a win-win, not a discount gimmick.</b>
-        <p>When neighbours group up, local businesses fill more jobs on one trip instead of criss-crossing the suburb chasing single bookings — so you pay less, they spend less on fuel and dead time, and everyone in the loop comes out ahead.</p>
+        <b>Two ways in — both a win for local businesses.</b>
+        <p>Join a group deal if you're saving-savvy and happy to wait a little for neighbours to join in — businesses fill more jobs on one trip instead of criss-crossing the suburb. Need it done now? Book the same trusted provider individually — it's quick for you, and still a new local customer for them, filling the gaps between group runs.</p>
       </div>
     </div>
 
@@ -523,9 +505,10 @@ const PRIORITY_ITEMS = [
   "Fast & easy booking",
   "Flexible scheduling & cancellations"
 ];
+const NOTIFY_OPTIONS = ["Email","SMS / text message","WhatsApp","Facebook group post"];
 let state = { role:null, name:"", email:"", suburb:null, services:new Set(),
   bizName:"", bizCategory:"", bizVolume:"", rating:0, reasons:new Set(),
-  concerns:new Set(), concernOther:"", priorityRank:[] };
+  concerns:new Set(), concernOther:"", priorityRank:[], notifyPrefs:new Set() };
 
 /* ============ RING HELPER ============ */
 function ringSvg(pct, size, stroke, fg){
@@ -556,12 +539,12 @@ const ROLE_CONTENT = {
   customer:{
     badgeClass:"customer", badgeLabel:"Joining as a customer",
     heading:"What would you love to save on?", lede:"A couple of quick details so we can match you to deals near you and remember what you care about.",
-    whyHelpsCard:"The services you already pay for — pest control, cleaning, detailing — are designed to cost less the moment your neighbours join too, with no coupon-hunting required.",
-    cardPerks:["Price only ever drops after you join","Earn Priority Points to use on any service"],
+    whyHelpsCard:"Join a group deal and the services you already pay for — pest control, cleaning, detailing — cost less the moment your neighbours join too. In a hurry? Book the same trusted provider individually instead — no waiting on a group.",
+    cardPerks:["Being part of a group with a strong track record for reliability","Book individually anytime if you need it fast"],
     miniBenefits:[
-      {icon:"💸", title:"Prices only drop", text:"Join early and the price is designed to only get better as the group fills."},
-      {icon:"🔒", title:"Price-lock plan", text:"Once you join, the plan is for your price to hold or drop from there — not increase on you."},
-      {icon:"🎯", title:"Priority Points", text:"Every completed deal is planned to earn points you can put toward any other service here — not just where you earned them."},
+      {icon:"⭐", title:"Reputation-based visibility", text:"Providers with consistently strong reviews are planned to get more visibility, so trust — not just price — decides who you see."},
+      {icon:"⚡", title:"Or skip the wait", text:"Time-critical job? Book the same vetted provider individually — full price, no group needed, done fast."},
+      {icon:"🛡️", title:"Reliability you can see", text:"A provider's record on no-shows or cancellations is planned to be visible before you commit to a group."},
       {icon:"✅", title:"Trusted local businesses", text:"The goal is for every business here to be checked — not random online sellers."}
     ],
     step2Heading:"What would keep you coming back?",
@@ -570,8 +553,8 @@ const ROLE_CONTENT = {
     feedbackPlaceholder:"e.g. seeing my savings add up, or referral rewards",
     reasonOptions:[
       "Seeing my savings add up over time",
-      "Referral rewards for bringing neighbours along",
-      "Priority Points I can use on other services",
+      "A visible track record of 5-star reviews and no cancellations",
+      "Being recognised for referring neighbours — even without a cash reward",
       "Easy re-booking with businesses I've already trusted",
       "Clear, upfront pricing with no surprises"
     ],
@@ -580,21 +563,21 @@ const ROLE_CONTENT = {
     confirmSub:"Thanks for sharing this — it genuinely helps shape what this becomes for the community. We'll be in touch as things take shape near you.",
     benefitsTitle:"Why customers stick around",
     benefits:[
-      {icon:"🎯", cls:"customer", title:"Priority Points", text:"Every completed deal earns Priority Points — redeem them for discounts on any other service here, from pest control to detailing."},
-      {icon:"🤝", cls:"customer", title:"Referral Credit", text:"Refer a neighbour who joins a deal — you both get $10 credit toward your next booking."},
-      {icon:"⏱️", cls:"customer", title:"Early Access Window", text:"After 2 completed deals, you see new deals 24 hours before everyone else."},
-      {icon:"📉", cls:"customer", title:"Guaranteed Price Match", text:"If the group grows after you join, your price drops too — never punished for joining early."},
-      {icon:"🎁", cls:"customer", title:"Seasonal Bundle Promotions", text:"Save more when you bundle services together during seasonal pushes — spring garden tidy-ups, pre-summer pool prep, end-of-lease cleans."}
+      {icon:"⭐", cls:"customer", title:"5-Star Track Record", text:"The plan is for providers to be ranked by real review history — not who pays the most — so trust decides what you see first."},
+      {icon:"🛡️", cls:"customer", title:"No-Cancellation Standard", text:"Providers with a clean record of turning up and finishing the job are the ones this is designed to keep front and centre."},
+      {icon:"✅", cls:"customer", title:"Cleared Payment History", text:"A history of smooth, cleared payments on both sides is part of what's meant to keep trust high as this grows."},
+      {icon:"🤝", cls:"customer", title:"Referral Recognition", text:"Bringing a neighbour along is something we genuinely want to recognise — we're still working out the best way to do that, and this pilot's feedback will help shape it."},
+      {icon:"🗣️", cls:"customer", title:"Your Feedback Shapes What's Next", text:"Loyalty perks are still taking shape, and feedback from this pilot is exactly what will guide those decisions."}
     ]
   },
   business:{
     badgeClass:"business", badgeLabel:"Joining as a business",
     heading:"Tell us about your business.", lede:"This helps us line up your first deal and the right customer volume from day one.",
-    whyHelpsCard:"Instead of spending on ads hoping for bookings, this is built to fill your calendar with a solid group before you do any work — you'd only run the deal once demand is real.",
-    cardPerks:["Keep more of every booking as you grow","See which customers keep coming back"],
+    whyHelpsCard:"Group deals fill your calendar with a solid cluster of bookings before you do any work — you'd only run the deal once demand is real. On top of that, the same local customer base can book you individually for time-critical jobs, so you're not only reaching people willing to wait for a group.",
+    cardPerks:["Being ranked on reliability and reviews, not just volume","Pick up individual bookings between group runs too"],
     miniBenefits:[
       {icon:"📈", title:"Demand-first design", text:"It's designed to fill your group before you lift a finger."},
-      {icon:"💰", title:"Fees that shrink", text:"Run more deals, and the plan is for you to keep a bigger share of each booking."},
+      {icon:"⚡", title:"Individual jobs too", text:"Customers needing something urgently can book you directly — extra reach beyond the group-deal crowd."},
       {icon:"🔁", title:"Know your repeat customers", text:"See who keeps coming back and reward them directly."},
       {icon:"📣", title:"Backup marketing push", text:"If a deal is short of its group size, the plan is to push extra marketing before it closes."}
     ],
@@ -603,7 +586,7 @@ const ROLE_CONTENT = {
     feedbackLabel:"What would make this your go-to for new customers?",
     feedbackPlaceholder:"e.g. lower fees at volume, or repeat customer data",
     reasonOptions:[
-      "Fees that keep shrinking as I run more deals",
+      "Being ranked higher for a strong reliability and review record",
       "Seeing which customers keep coming back",
       "A free marketing push when a deal is short",
       "A simple dashboard to manage bookings",
@@ -614,29 +597,29 @@ const ROLE_CONTENT = {
     confirmSub:"Thanks for the details — this helps shape how it supports businesses like yours. We'll be in touch as things take shape.",
     benefitsTitle:"Why businesses stay",
     benefits:[
-      {icon:"📉", cls:"business", title:"Volume Fee Discount", text:"Standard platform fee of 15% drops to 12% after 10 deals a month, and 10% after 20."},
-      {icon:"🔁", cls:"business", title:"Repeat Customer Dashboard", text:"See who keeps coming back and offer them private repeat deals."},
-      {icon:"🛟", cls:"business", title:"Guaranteed Fill Protection", text:"If a deal is short of threshold, we push free extra marketing for 48 hours before it closes."},
-      {icon:"⭐", cls:"business", title:"Featured Placement Credits", text:"Every completed deal earns credit toward a featured homepage slot for your next listing."},
-      {icon:"🤝", cls:"business", title:"Cross-Business Bundles", text:"Team up with other local businesses on joint promotions — like a clean-and-pest bundle — to reach each other's customer base."}
+      {icon:"⭐", cls:"business", title:"Reputation-Weighted Visibility", text:"The plan is for businesses with strong review histories to get preference for future placements — not just whoever pays most."},
+      {icon:"🛡️", cls:"business", title:"Reliability Recognition", text:"A record of zero cancellations and on-time jobs is meant to count toward better visibility over time."},
+      {icon:"✅", cls:"business", title:"Verified Payment History", text:"Clean, on-time payment history on both sides is part of what's designed to build trust as this scales."},
+      {icon:"🤝", cls:"business", title:"Cross-Business Referrals", text:"Team up with other local businesses on joint promotions — like a clean-and-pest bundle — to reach each other's customer base."},
+      {icon:"🗣️", cls:"business", title:"Your Feedback Shapes the Model", text:"Fees, priority and rewards are still being worked out, and feedback from this pilot is exactly what will guide those decisions."}
     ]
   },
   both:{
     badgeClass:"both", badgeLabel:"Joining as both",
     heading:"Set up your business — and your own customer profile.", lede:"Quick details on your business, plus what you'd personally use it for as a customer.",
     whyHelpsCard:"Run your business through this and use it as a customer for everyone else's services — savings and demand flow both ways on one account.",
-    cardPerks:["Fees shrink as your business grows","Your own Priority Points on every personal booking"],
+    cardPerks:["Reliability and reviews carry across both sides of your account","Referrals recognised on both sides, not promised as cash"],
     miniBenefits:[
       {icon:"🔁", title:"Benefits stack", text:"Every customer and business perk applies to you at once."},
-      {icon:"🔄", title:"Convert savings to credit", text:"Fee savings can become personal deal credit."}
+      {icon:"⭐", title:"Reputation carries both ways", text:"A strong review and reliability record on one side is planned to count on the other too."}
     ],
     step2Heading:"What would keep you fully in the loop?",
     step2Hint:"On a scale of 1 to 5, how likely are you to stick around on both sides?",
     feedbackLabel:"What would make this essential on both sides for you?",
     feedbackPlaceholder:"e.g. one dashboard for both, or combined loyalty rewards",
     reasonOptions:[
-      "Fees shrinking as my business grows",
-      "Priority Points earned on my own bookings too",
+      "Being ranked on reliability and reviews, not just fees",
+      "Referral recognition on both sides of my account",
       "One dashboard for both my business and my orders",
       "Seeing repeat customers on both sides"
     ],
@@ -645,11 +628,11 @@ const ROLE_CONTENT = {
     confirmSub:"Thanks for setting up both sides — this kind of feedback helps shape it for the whole community. We'll be in touch as things take shape.",
     benefitsTitle:"Why Loop Insiders stay",
     benefits:[
-      {icon:"🔁", cls:"both", title:"Stacked Benefits", text:"Every customer perk and every business perk applies to your single account."},
-      {icon:"💱", cls:"both", title:"Credit Conversion", text:"Fee savings from your business can convert into deal credit for your own bookings."},
-      {icon:"🚀", cls:"both", title:"Priority Everything", text:"Fastest approval queue, priority support, and first look at new categories."},
+      {icon:"⭐", cls:"both", title:"Reputation Carries Both Ways", text:"A strong review and reliability record on your business side is planned to count on your customer side too, and vice versa."},
+      {icon:"🛡️", cls:"both", title:"Reliability Recognition", text:"A no-cancellation, on-time track record matters here — on both sides of your account."},
       {icon:"🧾", cls:"both", title:"One Combined Dashboard", text:"Track your listed deals and your joined deals in a single account."},
-      {icon:"🌐", cls:"both", title:"Partner Perks Network", text:"First access to cross-business bundle promotions, so your business and your own household both benefit from every partnership formed here."}
+      {icon:"🤝", cls:"both", title:"Referrals That Are Recognised", text:"Bringing people in — as neighbours or as fellow businesses — is something we genuinely want to recognise, and we're still working out the best way to do that with input from this pilot."},
+      {icon:"🗣️", cls:"both", title:"Your Feedback Shapes the Model", text:"Perks and fees are still taking shape, and feedback from this pilot is exactly what will guide those decisions."}
     ]
   }
 };
@@ -863,8 +846,28 @@ function buildForm(role){
   }
   document.getElementById('step1-body').innerHTML =
     `<h3>${cfg.heading}</h3><p class="hint">${cfg.lede}</p>` + step1Html +
+    `<div class="field">
+       <label>How would you like to be notified about group deals or promotions?</label>
+       <span class="field-sub">Pick any that apply</span>
+       <div class="reason-grid" id="notify-list"></div>
+     </div>` +
     `<div class="error-msg" id="err-1">Fill in the required fields to continue.</div>
      <div class="step-actions"><button type="button" class="btn full grow" id="to-step2">Continue</button></div>`;
+
+  state.notifyPrefs = new Set();
+  document.getElementById('notify-list').innerHTML = NOTIFY_OPTIONS.map((n,i)=>`
+    <button type="button" class="reason-option" data-notify-idx="${i}">
+      <span class="r-text">${n}</span>
+      <span class="r-check">✓</span>
+    </button>`
+  ).join('');
+  document.querySelectorAll('#notify-list [data-notify-idx]').forEach(opt=>{
+    opt.addEventListener('click', ()=>{
+      const label = NOTIFY_OPTIONS[opt.dataset.notifyIdx];
+      if(state.notifyPrefs.has(label)){ state.notifyPrefs.delete(label); opt.classList.remove('selected'); }
+      else{ state.notifyPrefs.add(label); opt.classList.add('selected'); }
+    });
+  });
 
   wireStep1Interactions();
   initStars();
@@ -1110,6 +1113,7 @@ document.getElementById('role-form').addEventListener('submit', (e)=>{
         : label
     ).join(', '),
     priorityRank: state.priorityRank.map((idx,pos)=>`${pos+1}) ${PRIORITY_ITEMS[idx]}`).join('; '),
+    notifyPrefs: Array.from(state.notifyPrefs).join(', '),
     regNumber: regNumber
   });
 
@@ -1131,7 +1135,7 @@ document.getElementById('role-form').addEventListener('submit', (e)=>{
 document.getElementById('restart-btn').addEventListener('click', ()=>{
   state = { role:null, name:"", email:"", suburb:null, services:new Set(),
     bizName:"", bizCategory:"", bizVolume:"", rating:0, reasons:new Set(),
-    concerns:new Set(), concernOther:"", priorityRank:[] };
+    concerns:new Set(), concernOther:"", priorityRank:[], notifyPrefs:new Set() };
   selectedRoles = new Set();
   document.querySelectorAll('[data-toggle-role]').forEach(c=>c.classList.remove('selected'));
   updateRoleContinueState();
