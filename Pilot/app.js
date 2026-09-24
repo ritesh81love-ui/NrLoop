@@ -16,33 +16,27 @@ if (form) {
     const values = Object.fromEntries([...new Set([...data.keys()])].map(key => [key, data.getAll(key).join(', ')]));
     const consent = form.querySelector('[name="contactConsent"]');
     const business = values.role === 'business';
-    const payload = {
-      formType: business ? 'business' : 'customer',
-      firstName: business ? '' : (values.name || '').split(' ')[0],
-      contactName: business ? '' : values.name || '',
-      businessName: business ? values.bizName || '' : '',
-      email: business ? values.bizEmail || '' : values.email || '',
-      suburb: business ? '' : values.suburb || '',
-      services: business ? '' : values.services || '',
-      bookingPreference: business ? '' : values.priorityRank || '',
-      serviceArea: business ? values.bizSuburb || '' : '',
-      mainService: business ? values.bizCategory || '' : '',
-      groupPricing: business ? values.groupSizes || '' : '',
-      idealJobs: business ? values.bizVolume || '' : '',
-      notes: [values.concern, business ? values.categorySuggestion : values.serviceSuggestion,
-        business ? values.businessReferral && `Suggested business: ${values.businessReferral}` : ''].filter(Boolean).join(' | '),
-      consent: consent?.checked ? 'Email updates: yes' : 'Email updates: no',
-      source: 'Pilot three-page site',
-      pageUrl: location.href
-    };
+    // Preserve the field names used by the currently deployed interest Sheet.
+    const payload = new URLSearchParams({
+      role: values.role || '', name: values.name || '', email: values.email || '',
+      suburb: values.suburb || '', services: values.services || '',
+      serviceSuggestion: values.serviceSuggestion || '',
+      bizName: values.bizName || '', bizEmail: values.bizEmail || '',
+      bizCategory: values.bizCategory || '', bizSuburb: values.bizSuburb || '',
+      bizVolume: values.bizVolume || '', categorySuggestion: values.categorySuggestion || '',
+      rating: '', reasons: business ? `Suggested group sizes: ${values.groupSizes || 'not specified'}` : values.priorityRank || '',
+      concern: [values.concern, business && values.businessReferral ? `Business referral: ${values.businessReferral}` : ''].filter(Boolean).join(' | '),
+      priorityRank: values.priorityRank || '',
+      notifyPrefs: consent?.checked ? 'Email' : 'No updates'
+    });
     button.disabled = true;
     button.textContent = 'Sending…';
     status.textContent = '';
     status.className = 'form-status';
     try {
-      // Apps Script's ContentService redirects do not reliably expose CORS responses to GitHub Pages.
-      // A no-cors POST can confirm transport, but cannot verify the row was written.
-      await fetch(SHEET_ENDPOINT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload)});
+      // The deployed Apps Script accepts URL-encoded form fields. Its CORS response
+      // is opaque on GitHub Pages, so transport success is not proof of a saved row.
+      await fetch(SHEET_ENDPOINT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:payload});
       status.textContent = 'Thank you. Your response was sent. We cannot confirm the Sheet entry from this page.';
       status.classList.add('success');
       form.reset();
